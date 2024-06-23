@@ -9,9 +9,8 @@ from pages.constructor_page import ConstructorPage
 from pages.login_page import LoginPage
 
 
-#
-# Функции для работы с WebDriver
-#
+# работа с WebDriver
+
 @allure.title('Открываем окно веб-браузера')
 @pytest.fixture
 def get_browser():

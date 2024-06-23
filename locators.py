@@ -10,7 +10,7 @@ class MainPageLocators:
     ACTIVE_TEXT = 'link_active'  # текст в классе активной вкладки
     ORDER_BUTTON = (By.XPATH, ".//button[text()='Оформить заказ']")  # кнопка "Оформить заказ" на Главной странице
     LOGIN_BUTTON = (By.XPATH, ".//button[text()='Войти в аккаунт']")  # кнопка "Войти в аккаунт" на Главной странице
-    TOTAL_TODAY = (By.XPATH, ".//p[text()='Выполнено за сегодня:']")  # последний элемент нв странице Лента заказов
+    TOTAL_TODAY = (By.XPATH, ".//p[text()='Выполнено за сегодня:']")  # выполнено за сегодня заказов
 
 
     # локаторы страницы Конструктор:
@@ -45,9 +45,10 @@ class ProfilePageLocators:
     EXIT_BUTTON = (By.XPATH, ".//button[text()='Выход']")  # ссылка/кнопка "Выход"
     SAVE_BUTTON = (By.XPATH, ".//button[text()='Сохранить']")  # ссылка/кнопка "Сохранить"
     ORDER_HISTORY_ORDER_NUMBER = (By.XPATH,
+
                                   './/li[contains(@class,"OrderHistory_listItem")]/a/div/p[contains(@class,"digits")]')
 class OrdersPageLocators:
-    ORDER_LIST_ORDER_NUMBER = (By.XPATH, './/h2[contains(@class,"Modal_modal__title_shadow")]')  # номер нового заказа
+    ORDER_LIST_ORDER_NUMBER = (By.XPATH, './/p[contains(@class,"text_type_digits-default")]')  # номер нового заказа
     ORDER_LINK = (By.XPATH, '//*[contains(@href,"/feed/")]')
     ORDER_DETAILS_OPENED = (By.XPATH, './/section[contains(@class,"Modal_modal_opened")]') # модальное окно с деталями заказа
     ORDER_STATUS_BOX_LIST2_ITEM_DIGIT \

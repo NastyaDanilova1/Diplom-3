@@ -21,10 +21,9 @@ class TestFeedPage:
         driver = get_browser
         profile_page = ProfilePage(driver)
         order = profile_page.get_order_from_order_history()
-        feed_page = OrdersPage(driver)
-        feed_order_list = feed_page.get_order_number_list()
-
-        assert order in feed_order_list
+        order_page = OrdersPage(driver)
+        order_list = order_page.get_order_number_list()
+        assert order in order_list
 
 
     @allure.title('Проверяем что после оформления заказа его номер появляется в разделе В работе')

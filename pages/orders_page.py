@@ -3,9 +3,7 @@ import allure
 from data import Url
 from locators import OrdersPageLocators, MainPageLocators
 from pages.base_page import BasePage
-from selenium.webdriver.support.wait import WebDriverWait
-from selenium.webdriver import ActionChains
-from selenium.webdriver.support import expected_conditions
+
 
 
 class OrdersPage(BasePage):

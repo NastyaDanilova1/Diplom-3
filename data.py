@@ -1,5 +1,5 @@
-# _browser = 'Chrome'
-_browser = 'Firefoxe'
+_browser = 'Chrome'
+# _browser = 'Firefoxe'
 
 
 class Url:
@@ -11,16 +11,10 @@ class Url:
     MAIN_PAGE_URL = 'https://stellarburgers.nomoreparties.site'  # URL для Главной страницы
     FEED_PAGE_URL = 'https://stellarburgers.nomoreparties.site/feed'  # URL для Главной страницы
 
-
 class Data:
     USER_EMAIL = 'danilova@yandex.ru'
     USER_PASSWORD = '85793'
 
-
 class RESPONSE_KEYS:
     ACCESS_TOKEN = 'accessToken'
-    REFRESH_TOKEN = 'refreshToken'
-
-    AUTH_TOKEN_KEY = 'Authorization'
-    TOKEN_KEY = 'token'
 

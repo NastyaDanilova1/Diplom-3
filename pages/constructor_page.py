@@ -16,11 +16,6 @@ class ConstructorPage(BasePage):
     def click_feed_link(self):
         self.click_element_by_locator(MainPageLocators.FEED_LINK)
 
-    @allure.step('Ждем, что раздел Конструктор становится активным')
-    def constructor_is_active(self):
-        return self.wait_for_text_in_classname(MainPageLocators.CONSTRUCTOR_LINK,
-                                               MainPageLocators.ACTIVE_TEXT)
-
     @allure.step('Кликаем ссылку "Личный кабинет"')
     def click_profile_link(self):
         self.click_element_by_locator(MainPageLocators.PROFILE_LINK)
@@ -64,8 +59,6 @@ class ConstructorPage(BasePage):
         target = self.wait_for_load_element(MainPageLocators.DRAGNDROP_BUN_TARGET)
         # self.drag_and_drop(source, target)
         action.drag_and_drop(source, target).perform()
-
-
 
     @allure.step('Получаем счетчик булок')
     def get_buns_counter(self):

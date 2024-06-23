@@ -12,9 +12,6 @@ class LoginPage(BasePage):
         self.open_page(Url.LOGIN_PAGE_URL)
         self.wait_for_load_element(LoginPageLocators.LOGIN_BUTTON)
 
-    @allure.step('Ждем загрузку страницы авторизации')
-    def wait_open_login_page(self):
-        self.wait_for_load_element(LoginPageLocators.LOGIN_BUTTON)
 
     @allure.step('Вводим email и пароль')
     def enter_user_data(self, email, password):
