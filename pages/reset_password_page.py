@@ -17,5 +17,5 @@ class ResetPasswordPage(BasePage):
 
     @allure.step('Проверяем, что поле "пароль" становится активным')
     def password_field_focused(self):
-        return self.wait_for_text_in_classname(ResetPasswordPageLocators.FOCUSED_FIELD, ResetPasswordPageLocators.FOCUSED_TEXT)
-
+        return self.wait_for_text_in_classname(ResetPasswordPageLocators.FOCUSED_FIELD,
+                                               ResetPasswordPageLocators.FOCUSED_TEXT)

@@ -1,6 +1,6 @@
 import allure
 
-from locators import ProfilePageLocators, LoginPageLocators
+from locators import ProfilePageLocators
 from pages.base_page import BasePage
 from pages.constructor_page import ConstructorPage
 
@@ -9,7 +9,7 @@ class ProfilePage(BasePage):
 
     @allure.step('Ожидаем появления кнопки логина')
     def wait_login_button(self):
-        self.wait_for_load_element(LoginPageLocators.LOGIN_BUTTON)
+        self.wait_for_load_element(ProfilePageLocators.LOGIN_BUTTON)
 
     @allure.step('Открываем Личный кабинет по ссылке на Главной странице')
     def open_profile_page(self):

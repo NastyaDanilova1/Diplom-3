@@ -1,13 +1,13 @@
 import allure
 from data import Url
-from locators import LoginPageLocators, RecoveryPasswordPageLocators
+from locators import LoginPageLocators
 from pages.base_page import BasePage
 
 
 class LoginPage(BasePage):
-    @allure.step('Ожидаем появления кнопки восстановления ')
+    @allure.step('Ожидаем появления кнопки восстановления')
     def wait_recovery_button(self):
-        self.wait_for_load_element(RecoveryPasswordPageLocators.RECOVER_BUTTON)
+        self.wait_for_load_element(LoginPageLocators.RECOVER_BUTTON)
 
     @allure.step('Открываем страницу авторизации')
     def open_login_page(self):

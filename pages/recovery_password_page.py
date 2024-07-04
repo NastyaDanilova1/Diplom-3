@@ -1,7 +1,7 @@
 import allure
 
 from data import *
-from locators import RecoveryPasswordPageLocators, ResetPasswordPageLocators
+from locators import RecoveryPasswordPageLocators
 from pages.base_page import BasePage
 
 
@@ -24,5 +24,5 @@ class RecoveryPasswordPage(BasePage):
         self.scroll_to_click_email_field()
         self.set_value(RecoveryPasswordPageLocators.EMAIL_FIELD, email)
         self.click_element_by_locator_when_clickable(RecoveryPasswordPageLocators.RECOVER_BUTTON)
-        self.wait_for_load_element(ResetPasswordPageLocators.SAVE_BUTTON)
+        self.wait_for_load_element(RecoveryPasswordPageLocators.SAVE_BUTTON)
 

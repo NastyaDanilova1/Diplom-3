@@ -14,7 +14,7 @@ class BasePage:
 
     @allure.step('Ждем загрузку элемента HTML по локатору')
     def wait_for_load_element(self, locator):
-        return WebDriverWait(self.driver, 20).until(
+        return WebDriverWait(self.driver, 10).until(
             expected_conditions.visibility_of_element_located(locator))
 
     @allure.step('Вводим текст в поле по локатору')

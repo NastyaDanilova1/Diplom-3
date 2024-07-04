@@ -1,7 +1,7 @@
 import allure
 
 from data import Url
-from locators import OrdersPageLocators, MainPageLocators
+from locators import OrdersPageLocators
 from pages.base_page import BasePage
 
 
@@ -10,7 +10,7 @@ class OrdersPage(BasePage):
 
     @allure.step('Ожидаем появление числа заказов за сегодня ')
     def wait_total_today(self):
-        self.wait_for_load_element(MainPageLocators.TOTAL_TODAY)
+        self.wait_for_load_element(OrdersPageLocators.TOTAL_TODAY)
     @allure.step('Открываем Ленту заказов')
     def open_feed_page(self):
         self.open_page(Url.FEED_PAGE_URL)
@@ -18,12 +18,12 @@ class OrdersPage(BasePage):
 
     @allure.step('кликаем ссылку "Конструктор"')
     def click_constructor_link(self):
-        self.click_element_by_locator(MainPageLocators.CONSTRUCTOR_LINK)
+        self.click_element_by_locator(OrdersPageLocators.CONSTRUCTOR_LINK)
 
     @allure.step('Проверяем, что Лента заказов становится активным')
     def feed_is_active(self):
-        return self.wait_for_text_in_classname(MainPageLocators.FEED_LINK,
-                                               MainPageLocators.ACTIVE_TEXT)
+        return self.wait_for_text_in_classname(OrdersPageLocators.FEED_LINK,
+                                               OrdersPageLocators.ACTIVE_TEXT)
 
     @allure.step('кликаем на 1-й заказ')
     def click_order_link(self):

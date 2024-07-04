@@ -5,13 +5,10 @@ class MainPageLocators:
     # локаторы главной страницы
     ANY_BUTTON = (By.XPATH, ".//button")  # сслыка/кнопка "Оформить заказ"/"Войти в аккаунт" на Главной странице
     PROFILE_LINK = (By.XPATH, ".//a[@href='/account']")  # ссылка/кнопка Личный кабинет
-    CONSTRUCTOR_LINK = (By.XPATH, ".//a[@href='/']")  # ссылк/кнопка на Конструктор
     FEED_LINK = (By.XPATH, ".//a[@href='/feed']")  # ссылка/кнопка на Ленту заказов
-    ACTIVE_TEXT = 'link_active'  # текст в классе активной вкладки
     ORDER_BUTTON = (By.XPATH, ".//button[text()='Оформить заказ']")  # кнопка "Оформить заказ" на Главной странице
     LOGIN_BUTTON = (By.XPATH, ".//button[text()='Войти в аккаунт']")  # кнопка "Войти в аккаунт" на Главной странице
-    TOTAL_TODAY = (By.XPATH, ".//p[text()='Выполнено за сегодня:']")  # выполнено за сегодня заказов
-
+    SAVE_BUTTON = (By.XPATH, ".//button[text()='Сохранить']")  # ссылка/кнопка "Сохранить"
 
     # локаторы страницы Конструктор:
     DETAILS_OPENED_LINK = (By.XPATH, './/section[contains(@class,"Modal_modal_opened")]') # окно детали ингредиента
@@ -38,10 +35,12 @@ class LoginPageLocators:
     FORGOT_PAGE_LINK = (
     By.XPATH, ".//a[text()='Восстановить пароль']")  # cсылка/кнопка "Восстановить пароль" на странице авторизации
     LOGIN_BUTTON = (By.XPATH, ".//button[text()='Войти']")  # сслыка/кнопка "Войти"
+    RECOVER_BUTTON = (By.XPATH, ".//button[text()='Восстановить']")  # сслыка/кнопка "Восстановить"
 
 class ProfilePageLocators:
     ORDER_HISTORY_LINK = (By.XPATH, ".//a[@href='/account/order-history']")  # ссылка/кнопка "История заказов"
     ORDER_HISTORY_IS_ACTIVE = 'Account_link_active'  # история заказов активна
+    LOGIN_BUTTON = (By.XPATH, ".//button[text()='Войти']")  # сслыка/кнопка "Войти"
     EXIT_BUTTON = (By.XPATH, ".//button[text()='Выход']")  # ссылка/кнопка "Выход"
     SAVE_BUTTON = (By.XPATH, ".//button[text()='Сохранить']")  # ссылка/кнопка "Сохранить"
     ORDER_HISTORY_ORDER_NUMBER = (By.XPATH,
@@ -54,15 +53,19 @@ class OrdersPageLocators:
     ORDER_STATUS_BOX_LIST2_ITEM_DIGIT \
         = (By.XPATH, '(.//ul[contains(@class,"OrderFeed_orderList")])[2]/li[contains(@class,"digits")]')
     ORDER_FEED_NUMBER = (By.XPATH, './/p[contains(@class,"OrderFeed_number")]')
+    CONSTRUCTOR_LINK = (By.XPATH, ".//a[@href='/']")  # ссылк/кнопка на Конструктор
+    ACTIVE_TEXT = 'link_active'  # текст в классе активной вкладки
+    TOTAL_TODAY = (By.XPATH, ".//p[text()='Выполнено за сегодня:']")  # выполнено за сегодня заказов
+    FEED_LINK = (By.XPATH, ".//a[@href='/feed']")  # ссылка/кнопка на Ленту заказов
 
 
 class RecoveryPasswordPageLocators:
     RECOVER_BUTTON = (By.XPATH, ".//button[text()='Восстановить']")  # сслыка/кнопка "Восстановить"
     EMAIL_FIELD = (By.XPATH, ".//input[@type='text']")  # поле для ввода email
+    SAVE_BUTTON = (By.XPATH, ".//button[text()='Сохранить']")  # Кнопка "Сохранить"
 
 
 class ResetPasswordPageLocators:
-    SAVE_BUTTON = (By.XPATH, ".//button[text()='Сохранить']")  # Кнопка "Сохранить"
     EYE_ICON = (By.XPATH, '//*[contains(@class,"input__icon")]')
     PASSWORD_PLACEHOLDER = (By.XPATH, ".//label[text()='Пароль']")  # плейсхолдер поля "Пароль"
     FOCUSED_FIELD = (By.XPATH, '//*[contains(@class,"input__placeholder")]')  # класс поля "Пароль"

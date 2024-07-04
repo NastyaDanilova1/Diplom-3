@@ -29,7 +29,7 @@ class ConstructorPage(BasePage):
         self.open_constructor_page()
         self.wait_for_load_element(MainPageLocators.ORDER_BUTTON)
         self.click_profile_link()
-        self.wait_for_load_element(ProfilePageLocators.SAVE_BUTTON)
+        self.wait_for_load_element(MainPageLocators.SAVE_BUTTON)
 
     @allure.step('Кликаем на 1-й ингредиент')
     def click_ingredient_link(self):
