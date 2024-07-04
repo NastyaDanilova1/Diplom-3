@@ -10,6 +10,7 @@ class ConstructorPage(BasePage):
     @allure.step('Ожидаем появление кнопки')
     def wait_login_button(self):
         self.wait_for_load_element(MainPageLocators.LOGIN_BUTTON)
+
     @allure.step('Открываем Главную страницу по url')
     def open_constructor_page(self):
         self.open_page(Url.MAIN_PAGE_URL)
