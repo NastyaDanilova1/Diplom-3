@@ -7,6 +7,9 @@ from selenium.webdriver import ActionChains
 
 class ConstructorPage(BasePage):
 
+    @allure.step('Ожидаем появление кнопки')
+    def wait_login_button(self):
+        self.wait_for_load_element(MainPageLocators.LOGIN_BUTTON)
     @allure.step('Открываем Главную страницу по url')
     def open_constructor_page(self):
         self.open_page(Url.MAIN_PAGE_URL)
@@ -27,7 +30,6 @@ class ConstructorPage(BasePage):
         self.click_profile_link()
         self.wait_for_load_element(ProfilePageLocators.SAVE_BUTTON)
 
-    #
     @allure.step('Кликаем на 1-й ингредиент')
     def click_ingredient_link(self):
         self.click_element_by_locator(MainPageLocators.INGREDIENT_LINK)
@@ -57,7 +59,6 @@ class ConstructorPage(BasePage):
         action = ActionChains(self.driver)
         source = self.wait_for_load_element(MainPageLocators.INGREDIENT_LINK)
         target = self.wait_for_load_element(MainPageLocators.DRAGNDROP_BUN_TARGET)
-        # self.drag_and_drop(source, target)
         action.drag_and_drop(source, target).perform()
 
     @allure.step('Получаем счетчик булок')
@@ -117,4 +118,3 @@ class ConstructorPage(BasePage):
         order = self.get_new_order_number()
         self.click_element_by_locator(MainPageLocators.ORDER_CLOSE_BUTTON)
         return str(order)
-

@@ -9,13 +9,17 @@ class BasePage:
         self.driver = driver
 
     @allure.step('Открываем страницу по URL')
-    def open_page(self, page_url):
-        return self.driver.get(page_url)
+    def open_page(self, url):
+        self.driver.get(url)
 
     @allure.step('Ждем загрузку элемента HTML по локатору')
     def wait_for_load_element(self, locator):
         return WebDriverWait(self.driver, 20).until(
             expected_conditions.visibility_of_element_located(locator))
+
+    @allure.step('Вводим текст в поле по локатору')
+    def set_value(self, locator, value):
+        return self.wait_for_load_element(locator).send_keys(value)
 
     @allure.step('Ждем загрузку всех элементов HTML по локатору')
     def wait_for_load_all_elements(self, locator):
@@ -37,11 +41,6 @@ class BasePage:
     def find_element(self, locator):
         return self.driver.find_element(*locator)
 
-
-    @allure.step('Вводим текст в поле по локатору')
-    def set_value(self, locator, value):
-        return WebDriverWait(self.driver, 20).until(
-            expected_conditions.visibility_of_element_located(locator)).send_keys(value)
 
     @allure.step('Прокручиваем страницу до элемента по локатору')
     def scroll_to_element_by_locator(self, locator):

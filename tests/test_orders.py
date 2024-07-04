@@ -1,4 +1,3 @@
-
 from pages.orders_page import OrdersPage
 from pages.profile_page import ProfilePage
 from conftest import *
@@ -7,8 +6,7 @@ from conftest import *
 class TestFeedPage:
 
     @allure.title('Проверяем что если кликнуть на заказ, откроется всплывающее окно с деталями')
-    def test_click_order_modal_window(self, create_new_user_by_api, get_browser, login_new_user, create_order):
-        driver = get_browser
+    def test_click_order_modal_window(self, create_new_user_by_api, driver, login_new_user, create_order):
         feed_page = OrdersPage(driver)
         feed_page.open_feed_page()
         feed_page.click_order_link()
@@ -17,8 +15,7 @@ class TestFeedPage:
 
 
     @allure.title('Проверяем что заказы пользователя из раздела «История заказов» отображаются на странице «Лента заказов»')
-    def test_user_orders_are_in_orders_list(self, create_new_user_by_api, get_browser, login_new_user, create_order):
-        driver = get_browser
+    def test_user_orders_are_in_orders_list(self, create_new_user_by_api, driver, login_new_user, create_order):
         profile_page = ProfilePage(driver)
         order = profile_page.get_order_from_order_history()
         order_page = OrdersPage(driver)
@@ -27,8 +24,7 @@ class TestFeedPage:
 
 
     @allure.title('Проверяем что после оформления заказа его номер появляется в разделе В работе')
-    def test_user_order_is_in_work(self, create_new_user_by_api, get_browser, login_new_user, create_order):
-        driver = get_browser
+    def test_user_order_is_in_work(self, create_new_user_by_api, driver, login_new_user, create_order):
         new_order = create_order
         constructor_page = ConstructorPage(driver)
         constructor_page.click_feed_link()
@@ -39,8 +35,7 @@ class TestFeedPage:
 
 
     @allure.title('Проверяем что создании нового заказа счётчик "Выполнено за всё время" увеличивается')
-    def test_orders_total_more_counter(self, get_browser, create_new_user_by_api, login_new_user):
-        driver = get_browser
+    def test_orders_total_more_counter(self, driver, create_new_user_by_api, login_new_user):
         feed_page = OrdersPage(driver)
         feed_page.open_feed_page()
         orders_before = feed_page.get_orders_total()
@@ -53,8 +48,7 @@ class TestFeedPage:
 
 
     @allure.title('Проверяем что при создании нового заказа счётчик "Выполнено за сегодня" увеличивается')
-    def test_orders_today_counter_more(self, get_browser, create_new_user_by_api, login_new_user):
-        driver = login_new_user
+    def test_orders_today_counter_more(self, driver, create_new_user_by_api, login_new_user):
         feed_page = OrdersPage(driver)
         feed_page.open_feed_page()
         orders_before = feed_page.get_orders_today()

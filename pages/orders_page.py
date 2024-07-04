@@ -8,10 +8,13 @@ from pages.base_page import BasePage
 
 class OrdersPage(BasePage):
 
+    @allure.step('Ожидаем появление числа заказов за сегодня ')
+    def wait_total_today(self):
+        self.wait_for_load_element(MainPageLocators.TOTAL_TODAY)
     @allure.step('Открываем Ленту заказов')
     def open_feed_page(self):
         self.open_page(Url.FEED_PAGE_URL)
-        self.wait_for_load_element(MainPageLocators.TOTAL_TODAY)
+        self.wait_total_today()
 
     @allure.step('кликаем ссылку "Конструктор"')
     def click_constructor_link(self):
